@@ -26,7 +26,7 @@ function sendFile(response, filePath, fileContents) {
   response.end(fileContents);
 }
 
-//determines whether or not the file is cached, and if so serves it. If not, read from disk and serves.  If doesnt exist, returns 404 Error
+//determines whether or not the file is cached, and if so serves it. If not, read from disk and serves.  If the file doesnt exist, function returns 404
 function serveStatic(response, cache, absPath) {
   if (cache[absPath]) {
     sendFile(response, absPath, cache[absPath]);
@@ -67,6 +67,6 @@ server.listen(3000, function() {
 });
 
 
-//getting socket.io going
+//getting socket.io going, see chat_Server.js
 var charServer = require('./lib/chat_server');
 chatServer.listen(server);
