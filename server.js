@@ -68,5 +68,5 @@ server.listen(3000, function() {
 
 
 //getting socket.io going, see chat_Server.js
-var charServer = require('./lib/chat_server');
+var chatServer = require('./lib/chat_server');
 chatServer.listen(server);
